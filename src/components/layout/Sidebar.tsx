@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { LayoutDashboard, BookOpen, CalendarRange, Sparkles, Settings as SettingsIcon, CalendarDays } from 'lucide-react'
+import { LayoutDashboard, BookOpen, CalendarRange, Sparkles, Settings as SettingsIcon, CalendarDays, GraduationCap } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 import { useAppStore } from '@/store'
@@ -20,8 +20,8 @@ export function Sidebar() {
   return (
     <aside className="w-64 bg-white border-r border-slate-200 h-screen flex flex-col pt-6">
       <div className="px-6 mb-8 flex items-center gap-2">
-        <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold">
-          B
+        <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold shadow-sm">
+          <GraduationCap className="w-5 h-5" />
         </div>
         <div>
           <h1 className="font-bold text-slate-900 text-lg leading-tight">BunkBuddy</h1>

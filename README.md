@@ -11,12 +11,13 @@ Track attendance, match your college portal percentage exactly, simulate skippin
 ![AI](https://img.shields.io/badge/AI-Gemini%20API-8E75B2)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
-[Features](#-features) • [How It Works](#-how-it-works) • [Tech Stack](#-tech-stack) • [Getting Started](#-getting-started) • [Roadmap](#-roadmap)
+[Overview](#overview) • [Features](#features) • [How It Works](#how-it-works) • [Tech Stack](#tech-stack) • [Getting Started](#getting-started)
 
 </div>
 
 ---
 
+<a id="overview"></a>
 ## 📖 Overview
 
 Most attendance trackers only tell you what already happened. **BunkBuddy** also tells you what *will* happen.
@@ -27,6 +28,7 @@ You set up your subjects and weekly timetable once. From then on, BunkBuddy auto
 
 ---
 
+<a id="features"></a>
 ## ✨ Features
 
 | Module | What it does |
@@ -41,6 +43,7 @@ You set up your subjects and weekly timetable once. From then on, BunkBuddy auto
 
 ---
 
+<a id="how-it-works"></a>
 ## 🧠 How It Works
 
 BunkBuddy is a connected loop. Each layer feeds the next.
@@ -83,6 +86,7 @@ When you need a mastermind, BunkBuddy pings the **Gemini API** with your timetab
 
 ---
 
+<a id="tech-stack"></a>
 ## 🛠️ Tech Stack
 
 <!-- Update this table to match the repo exactly -->
@@ -97,6 +101,7 @@ When you need a mastermind, BunkBuddy pings the **Gemini API** with your timetab
 
 ---
 
+<a id="getting-started"></a>
 ## 🚀 Getting Started
 
 ### Prerequisites

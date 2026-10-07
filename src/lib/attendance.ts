@@ -47,11 +47,14 @@ export function calculateSubjectAttendance(subject: Subject): number {
 }
 
 export function calculateSafeBunks(subjects: Subject[], target: number = 75, lib?: LibraryAttendance): number {
+  const totalClasses = subjects.reduce((sum, s) => sum + s.totalClasses, 0)
+  if (totalClasses === 0) return 0
+
   const currentPercentage = calculateOverallAttendance(subjects, lib)
   if (currentPercentage < target) return 0
 
   let x = 0
-  while (true) {
+  while (x < 1000) { // Add absolute safety max iteration limit
     // Simulate skipping x+1 classes
     const projectedPercentage = calculateSimulatedAttendance(subjects, x + 1, lib)
     if (projectedPercentage >= target) {
@@ -65,18 +68,17 @@ export function calculateSafeBunks(subjects: Subject[], target: number = 75, lib
 }
 
 export function calculateRecoveryClasses(subjects: Subject[], target: number = 75, lib?: LibraryAttendance): number {
+  const totalClasses = subjects.reduce((sum, s) => sum + s.totalClasses, 0)
+  if (totalClasses === 0) return 0
+
   const currentPercentage = calculateOverallAttendance(subjects, lib)
   if (currentPercentage >= target) return 0
 
   let n = 0
-  while (true) {
+  while (n < 1000) { // Add absolute safety max iteration limit
     // Simulate attending n classes
     // We do this by artificially bumping attendedClasses and totalClasses
-    const simSubjects = subjects.map(s => ({
-      ...s,
-      // distribute the attended classes proportionally or just add to the first subject
-      // since we only care about the aggregate, we can just add `n` to the first subject
-    }))
+    const simSubjects = subjects.map(s => ({ ...s }))
     
     if (simSubjects.length > 0) {
       simSubjects[0].totalClasses += n
